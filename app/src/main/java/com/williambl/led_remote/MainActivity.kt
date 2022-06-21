@@ -5,6 +5,9 @@ import android.content.pm.PackageManager.PERMISSION_GRANTED
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
+import android.widget.SeekBar
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     var toRunAfterPermissionGranted: (() -> Unit)? = null
@@ -16,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     fun power(view: View) {
         this.runWithPermissions {
-            transmit(view.context, 0xff.toByte(), 0x1A)
+            transmit(view.context, (0xFFu.toByte()), Integer.parseInt(this.findViewById<EditText>(R.id.valueToSend).text.toString(), 16).toUByte().toByte())
         }
     }
 

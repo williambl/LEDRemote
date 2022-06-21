@@ -37,6 +37,7 @@ fun encode(bytes: ByteArray): List<Int> {
 }
 
 fun transmit(context: Context, address: Byte, command: Byte) {
+    println(command.toUByte().toString(16))
     val manager = context.getSystemService(Context.CONSUMER_IR_SERVICE) as ConsumerIrManager
 
     val intervals = encode(address, command)

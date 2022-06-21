@@ -8,9 +8,18 @@
         tools:context=".MainActivity">
     <Button
             android:onClick="power"
-            android:text="POWER"
+            android:text="TRANSMIT"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/button"
+            android:layout_height="wrap_content" android:id="@+id/transmit_button"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="value"
+            android:ems="10"
+            android:id="@+id/valueToSend"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/transmit_button"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
